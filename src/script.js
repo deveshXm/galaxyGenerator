@@ -178,6 +178,8 @@ gui.addColor(parameters, "outsideColor").onFinishChange(generateGalaxy);
 
 const tick = () => {
   const elapsedTime = clock.getElapsedTime();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio( window.devicePixelRatio );
   controls.update();
   renderer.render(scene, camera);
   window.requestAnimationFrame(tick);
