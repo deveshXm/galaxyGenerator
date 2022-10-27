@@ -176,6 +176,36 @@ gui
 gui.addColor(parameters, "insideColor").onFinishChange(generateGalaxy);
 gui.addColor(parameters, "outsideColor").onFinishChange(generateGalaxy);
 
+// stars
+
+const particleGeometry = new THREE.BufferGeometry();
+const count = 5000;
+const particleMaterial = new THREE.PointsMaterial({
+  size : 0.05 , 
+  sizeAttenuation : true,
+  map : star
+})
+
+const positions = new Float32Array(count * 3);
+
+for( let i = 0 ; i < count ; i++){
+  positions[i] = (Math.random() - 0.5) * 50;
+
+}
+
+particleGeometry.setAttribute('position' , 
+  new THREE.BufferAttribute(positions , 3)
+)
+
+// create particles 
+
+const particles = new THREE.Points(
+  particleGeometry, particleMaterial
+)
+
+
+scene.add(particles);
+
 const tick = () => {
   const elapsedTime = clock.getElapsedTime();
   renderer.setSize(window.innerWidth, window.innerHeight);
