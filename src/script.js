@@ -40,12 +40,12 @@ const star = textureLoader.load("textures/star.png");
 // parameters
 
 const parameters = {};
-parameters.count = 150000;
-parameters.size = 0.025;
-parameters.radius = 4.8;
+parameters.count = 70000;
+parameters.size = 0.043;
+parameters.radius = 6.71;
 parameters.branches = 3;
 parameters.spin = 1;
-parameters.randomnessPower = 2.27;
+parameters.randomnessPower = 1.53;
 parameters.rotationSpeed = 0.1;
 parameters.insideColor = "#ff6030";
 parameters.outsideColor = "#151ffc";
